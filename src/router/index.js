@@ -1,17 +1,26 @@
-/*
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
  
+function lazyLoad(view) {
+  return () => import(`../views/${view}.vue`)
+}
+
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: lazyLoad('app')
   },
   {
-    path: '/about',
-    name: 'about',
-    component: () => import('../views/AboutView.vue')
+    path: '/login',
+    name: 'login',
+    component: lazyLoad('LoginPage'),
+    meta: {layout: 'empty-layout'}
+  },
+  {
+    path: '/:pathMatch(.*)',
+    name: 'PageNotFound',
+    component: lazyLoad('PageNotFound'),
+    meta: {layout: 'empty-layout'}
   }
 ] 
 
@@ -22,4 +31,3 @@ const router = createRouter({
 })
 
 export default router
-*/

@@ -18,9 +18,6 @@
                 <li class="my-5"><ButonStyle>Register</ButonStyle></li>
                 <li><ButonStyle>Login</ButonStyle></li>
             </ul>
-            
-            
-            
         </nav>
     </div>
 </template>
@@ -51,7 +48,3 @@ export default {
      
 }
 </script>
-
-<style scoped>
-
-</style>
